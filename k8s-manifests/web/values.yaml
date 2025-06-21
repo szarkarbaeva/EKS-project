@@ -1,0 +1,26 @@
+replicaCount: 2
+
+image:
+  repository: szarkarbaeva/web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+env:
+  CONFIG_VAR_1: "default_value"
+  CONFIG_VAR_2: "another_value"
+
+secretEnv:
+  SECRET_KEY: "my-secret-key"

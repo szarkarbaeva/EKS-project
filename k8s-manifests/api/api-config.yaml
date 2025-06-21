@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+data:
+  CONFIG_MODE: "production"
+  SERVICE_NAME: "api"

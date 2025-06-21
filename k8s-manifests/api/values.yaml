@@ -1,0 +1,26 @@
+replicaCount: 2
+
+image:
+  repository: szarkarbaeva/api-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+env:
+  API_ENV: "production"
+  CONFIG_VALUE: "default-api-config"
+
+secretEnv:
+  DB_PASSWORD: "supersecret"

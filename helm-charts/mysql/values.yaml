@@ -1,0 +1,9 @@
+image:
+  repository: mysql
+  tag: 8.0
+mysqlRootPassword: password
+persistence:
+  enabled: true
+  storageClass: ""
+  accessMode: ReadWriteOnce
+  size: 10Gi
